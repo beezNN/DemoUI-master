@@ -4,12 +4,12 @@ __author__ = 'YinJia'
 
 import os,sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from config import setting
+from ...config import setting
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchFrameException,NoSuchWindowException,NoAlertPresentException,NoSuchElementException
 import configparser
-from public.models.log import Log
+from ...public.models.log import Log
 
 con = configparser.ConfigParser()
 con.read(setting.CONFIG_DIR,encoding='utf-8')

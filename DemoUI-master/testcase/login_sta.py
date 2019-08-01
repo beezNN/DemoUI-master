@@ -6,10 +6,10 @@ __author__ = 'YinJia'
 import os,sys
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 import unittest,ddt,yaml
-from config import setting
-from public.models import myunit,screenshot
-from public.page_obj.loginPage import login
-from public.models.log import Log
+from ..config import setting
+from ..public.models import myunit,screenshot
+from ..public.page_obj.loginPage import login
+from ..public.models.log import Log
 
 try:
     f =open(setting.TEST_DATA_YAML + '/' + 'login_data.yaml',encoding='utf-8')

@@ -4,11 +4,11 @@ __author__ = 'YinJia'
 
 import os,sys
 sys.path.append(os.path.dirname(__file__))
-from config import setting
+from .config import setting
 import unittest,time
-from package.HTMLTestRunner import HTMLTestRunner
-from public.models.newReport import new_report
-from public.models.sendmail import send_mail
+import HTMLTestRunner
+from .public.models.newReport import new_report
+from .public.models.sendmail import send_mail
 
 # 测试报告存放文件夹，如不存在，则自动创建一个report目录
 if not os.path.exists(setting.TEST_REPORT):os.makedirs(setting.TEST_REPORT + '/' + "screenshot")
@@ -24,8 +24,8 @@ def run_case(all_case,result_path=setting.TEST_REPORT):
     filename =  result_path + '/' + now + 'result.html'
     fp = open(filename,'wb')
     runner = HTMLTestRunner(stream=fp,title='抽屉新热榜UI自动化测试报告',
-                            description='环境：windows 7 浏览器：chrome',
-                            tester='Jason')
+                            description='环境：windows 10 浏览器：chrome',
+                            tester='Zhongw')
     runner.run(all_case)
     fp.close()
     report = new_report(setting.TEST_REPORT) #调用模块生成最新的报告

@@ -4,14 +4,14 @@ __author__ = 'YinJia'
 
 import os,sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from config import setting
+from ...config import setting
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from public.page_obj.base import Page
+from ...public.page_obj.base import Page
 from time import sleep
-from public.models.GetYaml import getyaml
-from public.models.log import Log
+from ...public.models.GetYaml import getyaml
+from ...public.models.log import Log
 
 testData = getyaml(setting.TEST_Element_YAML + '/' + 'setup.yaml')
 log = Log()

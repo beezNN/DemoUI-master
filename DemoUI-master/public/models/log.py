@@ -6,9 +6,9 @@ __author__ = 'YinJia'
 import logging, time
 import os,sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from config import setting
+from ...config import setting
 
-# 日志存放文件夹，如不存在，则自动创建一个logs目录
+# 日志存放文件夹，如不存在，则自动创建一个logs目
 if not os.path.exists(setting.LOG_DIR):os.mkdir(setting.LOG_DIR)
 
 class Log():
