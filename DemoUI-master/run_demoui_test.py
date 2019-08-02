@@ -3,12 +3,13 @@
 __author__ = 'YinJia'
 
 import os,sys
-sys.path.append(os.path.dirname(__file__))
-from .config import setting
+from config import setting
 import unittest,time
 import HTMLTestRunner
-from .public.models.newReport import new_report
-from .public.models.sendmail import send_mail
+from public.models.newReport import new_report
+from public.models.sendmail import send_mail
+sys.path.append(os.path.dirname(__file__))
+
 
 # 测试报告存放文件夹，如不存在，则自动创建一个report目录
 if not os.path.exists(setting.TEST_REPORT):os.makedirs(setting.TEST_REPORT + '/' + "screenshot")
